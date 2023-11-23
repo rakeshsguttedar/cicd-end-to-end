@@ -28,9 +28,6 @@ pipeline {
         }
 
         stage('Push the artifacts'){
-           environment {
-               REGISTRY_CREDENTIALS = credentials('docker-cred')
-           }
            steps{
                 script{
                     sh '''
