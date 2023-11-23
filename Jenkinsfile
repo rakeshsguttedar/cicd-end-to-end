@@ -66,6 +66,8 @@ pipeline {
                 script{
                     withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                         sh '''
+                        git config user.email "rsguttedar@gmail.com"
+                        git config user.name "rakeshsguttedar"
                         cat deploy.yaml
                         sed -i  "s/4/${BUILD_NUMBER}/g" deploy.yaml
                         cat deploy.yaml
